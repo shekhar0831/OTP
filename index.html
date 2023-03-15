@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>One-Time Password</title>
+      <style>
+            .container{
+                  background-color: deepskyblue;
+                  width: 400px;
+                  height: 400px;
+                  margin: auto;
+                  border-radius: 15px;
+                  box-shadow: 5px 5px 20px aqua;
+            }
+            #btn{
+                  padding: 20px;
+                  margin-left: 130px;
+            }
+            h1{
+                  text-align: center;
+                  padding: 40px;
+            }
+            h3{
+                  text-align: center;  
+                  padding: 40px;
+            }
+      </style>
+</head>
+</head>
+<body>
+      <div class="container">
+            <h1>OTP GENERATOR</h1>
+            <button id="btn">Generate OTP</button>
+            <h3>Your OTP is : <span id="code-display"></span> </h3>
+      </div>
+      <script>
+            let code_display = document.getElementById("code-display")
+            let bodyElement = document.querySelector("body")
+            let btnElement = document.getElementById("btn")
+            btnElement.addEventListener("click" , ()=>{
+                  let otp = ""
+                  let otpz = "0987654321"
+                  for(let i=0 ; i<4 ; i++){
+                        let randomNumber = Math.trunc(Math.random()*10)
+                        otp += otpz[randomNumber]
+                        code_display.innerText = otp
+                  }
+            })
+      </script>
+</body>
+</html>
